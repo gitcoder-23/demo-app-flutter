@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  // const MyApp({super.key});
+
+  int count = 0;
+
+  void incrementCount() {
+    count + 1;
+  }
 
 // build method decorator
   @override
@@ -20,14 +26,32 @@ class MyApp extends StatelessWidget {
           // backgroundColor: Colors.pink,
           backgroundColor: const Color.fromARGB(240, 160, 29, 73),
         ),
-        body: const Center(
-          child: Text(
-            'New Flutter For Learning',
-            style: TextStyle(
-                fontSize: 30,
-                // color: Color.fromARGB(255, 119, 13, 59),
-                // fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic),
+        // body: const Center(
+        //   child: Text(
+        //     'New Flutter For Learning',
+        //     style: TextStyle(
+        //         fontSize: 30,
+        //         // color: Color.fromARGB(255, 119, 13, 59),
+        //         // fontWeight: FontWeight.bold,
+        //         fontStyle: FontStyle.italic),
+        //   ),
+        // ),
+
+        body: Center(
+          child: Column(
+            children: [
+              const Text(
+                'New Flutter For Learning',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+              Text(
+                '$count',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+            ],
           ),
         ),
         // floatingActionButton: FloatingActionButton(
@@ -49,9 +73,11 @@ class MyApp extends StatelessWidget {
           child: FittedBox(
             child: FloatingActionButton(
               onPressed: () {
+                count = count + 1;
                 // ignore: avoid_print
-                print('Button Clicked');
+                print('Button Clicked $count');
               },
+              tooltip: 'Increment',
               backgroundColor: const Color.fromARGB(240, 160, 29, 73),
               child: const Icon(
                 Icons.add,
@@ -63,6 +89,7 @@ class MyApp extends StatelessWidget {
 
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
+
       debugShowCheckedModeBanner: false,
     );
   }
