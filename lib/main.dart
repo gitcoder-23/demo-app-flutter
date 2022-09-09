@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
 }
 
-class MyApp extends StatelessWidget {
+class _MyAppState extends State<MyApp> {
   // const MyApp({super.key});
-
   int count = 0;
 
   void incrementCount() {
-    count + 1;
+    setState(() {
+      count = count + 1;
+    });
+    // ignore: avoid_print
+    print('Button Clicked $count');
   }
 
 // build method decorator
@@ -73,9 +79,7 @@ class MyApp extends StatelessWidget {
           child: FittedBox(
             child: FloatingActionButton(
               onPressed: () {
-                count = count + 1;
-                // ignore: avoid_print
-                print('Button Clicked $count');
+                incrementCount();
               },
               tooltip: 'Increment',
               backgroundColor: const Color.fromARGB(240, 160, 29, 73),
