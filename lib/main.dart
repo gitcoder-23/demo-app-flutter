@@ -30,15 +30,37 @@ class MyApp extends StatelessWidget {
                 fontStyle: FontStyle.italic),
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            // ignore: avoid_print
-            print('Button Clicked');
-          },
-          backgroundColor: const Color.fromARGB(240, 160, 29, 73),
-          // child: const Text('Plus'),
-          child: const Icon(Icons.add),
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () {
+        //     // ignore: avoid_print
+        //     print('Button Clicked');
+        //   },
+        //   backgroundColor: const Color.fromARGB(240, 160, 29, 73),
+        //   // child: const Text('Plus'),
+        // child: const Icon(
+        //   Icons.add,
+        //   size: 50,
+        // ),
+
+        // ),
+        floatingActionButton: SizedBox(
+          // height: 100.0,
+          // width: 100.0,
+          child: FittedBox(
+            child: FloatingActionButton(
+              onPressed: () {
+                // ignore: avoid_print
+                print('Button Clicked');
+              },
+              backgroundColor: const Color.fromARGB(240, 160, 29, 73),
+              child: const Icon(
+                Icons.add,
+                size: 50,
+              ),
+            ),
+          ),
         ),
+
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
     );
