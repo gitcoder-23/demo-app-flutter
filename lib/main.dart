@@ -7,7 +7,7 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-// "_" means private class
+// "_" means private class--> used only in this file not outer file
 class _MyAppState extends State<MyApp> {
   // const MyApp({super.key});
   int count = 0;
