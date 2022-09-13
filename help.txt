@@ -5,6 +5,10 @@ https://youtube.com/playlist?list=PLB97yPrFwo5g-XcPlfSXSOeeby23jVAcp
 Flutter ToDo App Tutorial for Beginners(
 Pradip Debnath
 )
+todoapp-> https://youtu.be/K4P5DZ9TRns
+
+// flutter clean
+https://stackoverflow.com/questions/61930007/how-to-solve-execution-failed-for-task-appcompileflutterbuilddebug
 
 
 
